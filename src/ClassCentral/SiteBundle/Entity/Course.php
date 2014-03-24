@@ -129,6 +129,14 @@ class Course {
      */
     private $reviews;
 
+    /**
+     * Stores the next session for a course. This is the one
+     * that is displayed in the course tables
+     * @var \ClassCentral\SiteBundle\Entity\Offering
+     */
+    private $nextSession;
+
+
 
     /**
      * Set name
@@ -458,6 +466,31 @@ class Course {
         return $this->reviews;
     }
 
+
+
+    /**
+     * Set nextSession
+     *
+     * @param \ClassCentral\SiteBundle\Entity\Offering $nextSession
+     * @return Course
+     */
+    public function setNextSession(\ClassCentral\SiteBundle\Entity\Offering $nextSession = null)
+    {
+        $this->nextSession = $nextSession;
+
+        return $this;
+    }
+
+    /**
+     * Get nextSession
+     *
+     * @return \ClassCentral\SiteBundle\Entity\Offering
+     */
+    public function getNextSession()
+    {
+        return $this->nextSession;
+    }
+
 }
 
 /**
@@ -486,4 +519,5 @@ abstract class CourseStatus
             self::TO_BE_REVIEWED => 'To Be Reviewed'
         );
     }
+
 }

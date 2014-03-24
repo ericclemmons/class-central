@@ -103,4 +103,14 @@ ClassCentral\SiteBundle\Entity\Course:
           instructor_id:
             referencedColumnName: id
       nullable: true
+  oneToOne:
+    nextSession:
+     targetEntity: Offering
+     cascade: {  }
+     mappedBy: null
+     inversedBy: null
+     joinColumns:
+         next_session_id:
+             referencedColumnName: id
+     orphanRemoval: false
 lifecycleCallbacks: {  }
